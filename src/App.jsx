@@ -8,7 +8,7 @@ export function App() {
   const [dtFinal, setDtFinal] = useState(formatDate(new Date()));
   const [data, setData] = useState([]);
 
-  const url = `https://api.bcb.gov.br/dados/serie/bcdata.sgs.${cdSerie}/dados?formato=json&dataInicial=${dtInicial}&dataFinal=${dtFinal}`;
+  const url = `https://bcb-proxy.claudemir-69b.workers.dev/dados/serie/bcdata.sgs.${cdSerie}/dados?formato=json&dataInicial=${dtInicial}&dataFinal=${dtFinal}`;
 
   const consultarDados = (url) => {
     fetch(url).then((response) => response.json()).then((data) => {
