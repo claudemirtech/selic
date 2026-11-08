@@ -10,7 +10,7 @@ export function App() {
 
   const url = `https://api.bcb.gov.br/dados/serie/bcdata.sgs.${cdSerie}/dados?formato=json&dataInicial=${dtInicial}&dataFinal=${dtFinal}`;
 
-  const consultarDados = (url) => {
+  const consultarDados = () => {
     fetch(url).then((response) => response.json()).then((data) => {
         setData(data); // Store the data in state
       }).catch((error) => {
@@ -55,7 +55,7 @@ export function App() {
           </div>
         </div>
         
-        <button onClick={() => consultarDados(url)}>
+        <button onClick={() => consultarDados()}>
           Consultar
         </button>
         {data.length > 0 && (
